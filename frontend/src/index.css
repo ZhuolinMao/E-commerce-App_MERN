@@ -1,3 +1,19 @@
-main{
-    min-height: 80vh;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+main {
+    min-height : 80vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+
+h3 {
+    padding: 1rem 0;
+}
+
+span:first-of-type {
+    margin: 0 0.1rem 0 0;
+}
+
+span {
+    margin: 0 0.1rem;
 }
