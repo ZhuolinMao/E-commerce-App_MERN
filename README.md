@@ -4,4 +4,4 @@
 
 Environment:
 
-ReactJS, NodeJS, ExpressJS, MongoDB, React-Bootstrap, Font Awesome, Axios, Mongoose
+ReactJS, NodeJS, ExpressJS, MongoDB, React-Bootstrap, Font Awesome, Axios, Mongoose, nodemon
