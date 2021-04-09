@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const orderSchema = mogoose.Schema(
+const orderSchema = mongoose.Schema(
     {
         user: {
             type: mongoose.Schema.Types.ObjectId,
@@ -70,7 +70,7 @@ const orderSchema = mogoose.Schema(
         }
     },
     {
-        timestamps: ture
+        timestamps: true
     }
 )
 

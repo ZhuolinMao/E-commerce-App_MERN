@@ -8,7 +8,7 @@ const reviewSchema = mongoose.Schema({
     timestamps: true
 });
 
-const productSchema = mogoose.Schema(
+const productSchema = mongoose.Schema(
     {
         user: {
             type: mongoose.Schema.Types.ObjectId,
@@ -58,7 +58,7 @@ const productSchema = mogoose.Schema(
         },
     },
     {
-        timestamps: ture
+        timestamps: true
     }
 );
 
