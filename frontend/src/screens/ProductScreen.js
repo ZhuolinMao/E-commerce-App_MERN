@@ -47,7 +47,7 @@ const ProductScreen = ({ match }) => {
 
                         <br></br>
 
-                        <Card className='productScreenPanel'>
+                        <Card className='productScreenPanel' style={{fontWeight: 'bolder'}}>
                             <ListGroup variant='flush'>
                                 <ListGroup.Item>
                                     <Row>
