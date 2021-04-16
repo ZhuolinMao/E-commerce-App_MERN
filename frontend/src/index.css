@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 main {
     min-height : 80vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: bolder;
 }
 
@@ -16,4 +16,30 @@ span:first-of-type {
 
 span {
     margin: 0 0.1rem;
+}
+
+/* fixed card height and fixed Price at the bottom of the cards on Home Screen */
+@media (min-width: 576px) {
+    .homeCard {
+        height: 383px;
+    }
+
+    .homeCardPrice {
+        position: absolute;
+        bottom  : 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    .productScreenPanel {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .productScreenPanel {
+        width: 70%;
+        margin: auto;
+    }
 }
