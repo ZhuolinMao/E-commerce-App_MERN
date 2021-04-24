@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Message from '../components/Message'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
-import { addToCart } from '../actions/cartActions'
+import { addToCart, removeFromCart } from '../actions/cartActions'
 
 const CartScreen = ({ match, location, history }) => {
     const productId = match.params.id
@@ -23,7 +23,7 @@ const CartScreen = ({ match, location, history }) => {
     }, [dispatch, productId, qty])
 
     const removeFromCartHandler = (id) => {
-        console.log('remove')
+        dispatch(removeFromCart(id))
     }
 
     const checkoutHandler = () => {
@@ -45,7 +45,7 @@ const CartScreen = ({ match, location, history }) => {
                                         <Image src={item.image} alt={item.name} fluid rounded></Image>
                                     </Col>
                                     <Col md={3}>
-                                        <Link to={'/product/${item.product}'}>{item.name}</Link>
+                                        <Link to={`/product/${item.product}`}>{item.name}</Link>
                                     </Col>
                                     <Col md={2}>{item.price}</Col>
                                     <Col md={2}>
@@ -73,16 +73,22 @@ const CartScreen = ({ match, location, history }) => {
                 )}
             </Col>
             <Col md={4}>
-                <Card style={{margin: '1rem 0'}}>
+                <Card style={{ margin: '1rem 0' }}>
                     <ListGroup variant='flush'>
                         <ListGroup.Item className='subtotal'>
                             <h2>Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) items</h2>
-                            ${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}
+                            {cartItems.map(item => (
+                                <span key={item.product}>
+                                <Image className='thumbnail' src={item.image} alt={item.name} thumbnail></Image>
+                                ({item.qty})
+                                </span>
+                            ))}
                         </ListGroup.Item>
-                        <ListGroup.Item>
-                            <Button type='button' className='btn-block' disbaled={cartItems.length === 0}
-                                onClick={checkoutHandler}>
-                                    Check out
+                        <ListGroup.Item className='subtotal'>
+                            Total price: ${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}
+                            <Button type='button' className='btn-block' style={{ margin: '1rem 0 0 0' }}
+                                disabled={cartItems.length === 0} onClick={checkoutHandler}>
+                                Check out
                             </Button>
                         </ListGroup.Item>
                     </ListGroup>
