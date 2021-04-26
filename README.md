@@ -4,4 +4,4 @@
 
 Environment:
 
-ReactJS, NodeJS, ExpressJS, MongoDB, React-Bootstrap, Font Awesome, Axios, Mongoose, nodemon, dotenv, express-async-handler, Postman, React-Redux, Redux-Thunk,
+ReactJS, NodeJS, ExpressJS, MongoDB, React-Bootstrap, Font Awesome, Axios, Mongoose, nodemon, dotenv, express-async-handler, Postman, React-Redux, Redux-Thunk, bcrypt
